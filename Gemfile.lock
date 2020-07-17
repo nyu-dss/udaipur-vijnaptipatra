@@ -96,7 +96,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.1.1)
-  minima (~> 2.5)
+  minima
   wax_tasks!
 
 BUNDLED WITH
