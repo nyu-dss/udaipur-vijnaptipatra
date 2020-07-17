@@ -5,12 +5,12 @@ layout: none
   "@context": "http://iiif.io/api/image/2/context.json",
   "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/images/scroll_7742-7752",
   "protocol": "http://iiif.io/api/image",
-  "width": 2295,
-  "height": 26319,
+  "width": 1140,
+  "height": 13073,
   "sizes": [
     {
-      "width": 2295,
-      "height": 26319
+      "width": 1140,
+      "height": 13073
     },
     {
       "width": 250,
