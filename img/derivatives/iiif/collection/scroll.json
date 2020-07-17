@@ -1,0 +1,16 @@
+---
+layout: none
+---
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/collection/scroll.json",
+  "@type": "sc:Collection",
+  "label": "scroll",
+  "manifests": [
+    {
+      "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/scroll/manifest.json",
+      "@type": "sc:Manifest",
+      "label": "scroll"
+    }
+  ]
+}

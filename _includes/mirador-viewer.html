@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="{{ '/mirador/css/mirador-combined.css' | absolute_url }}">
+<style>
+  .mirador {
+    display: block;
+    background-color: $neutral-light;
+    position: relative;
+    height: 450px;
+    width: 100%;
+    max-height: 80vh;
+    margin-top: $super-margin;
+    margin-bottom: $super-margin;
+    a {
+      color: inherit !important;
+    }
+    li {
+      font-size: 1em !important;
+    }
+  }
+</style>
+
+<script src="{{ '/mirador/mirador.js' | absolute_url }}"></script>
+
+<div id="mirador-iiif-viewer" class="iiif-viewer mirador" allowfullscreen="allowfullscreen"></div>
+<script>
+  Mirador({
+    id: 'mirador-iiif-viewer',
+    data: [
+      { "manifestUri": '{{ include.manifest | absolute_url }}' }
+    ],
+    windowObjects: [{
+      loadedManifest: '{{ include.manifest | absolute_url }}',
+      viewType: "ScrollView"
+    }]
+  });
+</script>
