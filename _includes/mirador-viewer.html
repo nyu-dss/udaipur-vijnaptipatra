@@ -1,35 +1,26 @@
-<link rel="stylesheet" type="text/css" href="{{ '/mirador/css/mirador-combined.css' | absolute_url }}">
-<style>
-  .mirador {
-    display: block;
-    background-color: $neutral-light;
-    position: relative;
-    height: 450px;
-    width: 100%;
-    max-height: 80vh;
-    margin-top: $super-margin;
-    margin-bottom: $super-margin;
-    a {
-      color: inherit !important;
-    }
-    li {
-      font-size: 1em !important;
-    }
-  }
-</style>
-
-<script src="{{ '/mirador/mirador.js' | absolute_url }}"></script>
-
-<div id="mirador-iiif-viewer" class="iiif-viewer mirador" allowfullscreen="allowfullscreen"></div>
-<script>
-  Mirador({
-    id: 'mirador-iiif-viewer',
-    data: [
-      { "manifestUri": '{{ include.manifest | absolute_url }}' }
-    ],
-    windowObjects: [{
+<div id="mirador" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;"></div>
+<script type="text/javascript" src="https://unpkg.com/mirador@alpha"></script>
+<script type="text/javascript">
+  var miradorInstance = Mirador.viewer({
+    id: 'mirador',
+    windows: [{
       loadedManifest: '{{ include.manifest | absolute_url }}',
-      viewType: "ScrollView"
-    }]
+    }],
+    window: {
+      allowClose: false,
+      allowMaximize: false,
+      defaultSideBarPanel: 'info',
+      defaultView: 'gallery',
+      sideBarOpenByDefault: true,
+    },
+    thumbnailNavigation: {
+      defaultPosition: 'off',
+    },
+    workspace: {
+      type: 'mosaic', // Which workspace type to load by default. Other possible values are "elastic"
+    },
+    workspaceControlPanel: {
+      enabled: false,
+    },
   });
 </script>
